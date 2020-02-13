@@ -4,4 +4,4 @@ module.exports = require('mysql2')
     user: 'r583le8c7wnfsdsb',
     password: 'takf2ckaqrhz757x',
     database: 'n7hgccvh2pv79jo2'
-})
+  })
