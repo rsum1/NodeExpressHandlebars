@@ -1,23 +1,37 @@
 const db = require('../config')
 
 module.exports = {
-  getBurgers() {
+  getBurgers(cb) {
     let result = []
     db.query('SELECT * FROM burgers', (e, burgers) => {
-      if(e) {
+      if (e) {
         console.log(e)
       }
-      result = burger
+      cb(burgers)
     })
-    return result
   },
-  addBurger() {
-
+  addBurger(name, eaten, cb) {
+    db.query(`INSERT INTO burgers (name, eaten) VALUES ("${name}", ${eaten})`, e => {
+      if (e) {
+        console.log(e)
+      }
+      cb()
+    })
   },
-  eatBurger() {
-
+  eatBurger(id, cb) {
+    db.query(`UPDATE burgers SET eaten = true WHERE id = ${id}`, e => {
+      if (e) {
+        console.log(e)
+      }
+      cb()
+    })
   },
-  removePizza() {
-
+  removeBurger(id, cb) {
+    db.query(`DELETE FROM burgers WHERE id = ${id}`, e => {
+      if (e) {
+        console.log(e)
+      }
+      cb()
+    })
   }
 }   
