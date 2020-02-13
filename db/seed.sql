@@ -1,4 +1,4 @@
-USE burger_db;
+USE n7hgccvh2pv79jo2;
 
 INSERT INTO burgers (name, eaten)
 VALUES ('bacon', false), 
