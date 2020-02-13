@@ -1,18 +1,19 @@
-moduile.exports = app => {
+const {burgers} = require('../controllers')
+module.exports = app => {
   // GET all Burgers
-  app.get('/burgers', (req, res)=> {
-
+  app.get('/burgers', (req, res) => {
+    res.send('GET all burgers')
   })
   // POST one burger
-  app.post('/burgers', (req, res)=> {
-
+  app.post('/burgers', (req, res) => {
+    res.send('POST one burger')
   })
   // PUT one burger
-  app.put('/burgers/:id', (req, res)=> {
-
+  app.put('/burgers/:id', (req, res) => {
+    res.send('PUT one burger')
   })
   // DELETE one burger
-  app.delete('/burgers/:id', (req, res)=> {
-
+  app.delete('/burgers/:id', (req, res) => {
+    res.send('DELETE on burger')
   })
 }
